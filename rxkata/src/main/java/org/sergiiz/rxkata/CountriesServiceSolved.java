@@ -46,20 +46,15 @@ class CountriesServiceSolved implements CountriesService {
         .all(country -> country.population > 1_000_000);
   }
 
+    @Override
+    public Observable<Country> listPopulationMoreThanOneMillion(List<Country> countries) {
+        return null; // put your solution here
+    }
 
-  @Override
-  public Observable<Country> listPopulationMoreThanOneMillion(List<Country> countries) {
-    return Observable.fromIterable(countries)
-        .filter(country -> country.population > 1_000_000);
-  }
-
-  @Override
-  public Observable<Country> listPopulationMoreThanOneMillion(
-      FutureTask<List<Country>> countriesFromNetwork) {
-    return Observable.fromFuture(countriesFromNetwork)
-        .flatMap(countries -> Observable.fromIterable(countries))
-        .filter(country -> country.population > 1_000_000);
-  }
+    @Override
+    public Observable<Country> listPopulationMoreThanOneMillionWithTimeoutFallbackToEmpty(final FutureTask<List<Country>> countriesFromNetwork) {
+        return null; // put your solution here
+    }
 
   @Override
   public Observable<String> getCurrencyUsdIfNotFound(String countryName, List<Country> countries) {
@@ -77,9 +72,20 @@ class CountriesServiceSolved implements CountriesService {
         .toObservable();
   }
 
-  @Override
-  public Single<Map<String, Long>> mapCountriesToNamePopulation(List<Country> countries) {
-    return Observable.fromIterable(countries)
-        .toMap(country -> country.name, country -> country.population);
-  }
+    @Override
+    public Single<Map<String, Long>> mapCountriesToNamePopulation(List<Country> countries) {
+        return null; // put your solution here
+    }
+
+    @Override
+    public Observable<Long> sumPopulationOfCountries(Observable<Country> countryObservable1,
+                                                     Observable<Country> countryObservable2) {
+        return null; // put your solution here
+    }
+
+    @Override
+    public Single<Boolean> areEmittingSameSequences(Observable<Country> countryObservable1,
+                                                    Observable<Country> countryObservable2) {
+        return null; // put your solution here
+    }
 }
