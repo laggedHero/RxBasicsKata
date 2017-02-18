@@ -37,14 +37,13 @@ class CountriesServiceSolved implements CountriesService {
         return null; // put your solution here
     }
 
-
     @Override
     public Observable<Country> listPopulationMoreThanOneMillion(List<Country> countries) {
         return null; // put your solution here
     }
 
     @Override
-    public Observable<Country> listPopulationMoreThanOneMillion(FutureTask<List<Country>> countriesFromNetwork) {
+    public Observable<Country> listPopulationMoreThanOneMillionWithTimeoutFallbackToEmpty(final FutureTask<List<Country>> countriesFromNetwork) {
         return null; // put your solution here
     }
 
@@ -60,6 +59,18 @@ class CountriesServiceSolved implements CountriesService {
 
     @Override
     public Single<Map<String, Long>> mapCountriesToNamePopulation(List<Country> countries) {
+        return null; // put your solution here
+    }
+
+    @Override
+    public Observable<Long> sumPopulationOfCountries(Observable<Country> countryObservable1,
+                                                     Observable<Country> countryObservable2) {
+        return null; // put your solution here
+    }
+
+    @Override
+    public Single<Boolean> areEmittingSameSequences(Observable<Country> countryObservable1,
+                                                    Observable<Country> countryObservable2) {
         return null; // put your solution here
     }
 }
